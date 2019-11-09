@@ -8,12 +8,11 @@ class SearchScreen extends StatefulWidget {
 class SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: Container(
-        color: Colors.blue,
-        padding: EdgeInsets.all(50.0),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.red,
         child: Text('Search', style: TextStyle(color: Colors.white, fontSize: 24.0)),
-      ),
     );
   }
 }

@@ -8,12 +8,11 @@ class AccountScreen extends StatefulWidget {
 class AccountScreenState extends State<AccountScreen> {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: Container(
-        color: Colors.blue,
-        padding: EdgeInsets.all(50.0),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.orange,
         child: Text('My Stuff', style: TextStyle(color: Colors.black, fontSize: 24.0)),
-      ),
     );
   }
 }

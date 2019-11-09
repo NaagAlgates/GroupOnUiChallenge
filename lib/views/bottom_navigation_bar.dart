@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart' as md;
+import 'package:flutter/widgets.dart';
 import 'package:group_on_ui/helpers/themes.dart';
+import 'dart:io' show Platform;
 
 final md.Color defaultColor = md.Colors.grey[500];
 
@@ -53,6 +55,7 @@ class GroupOnBottomNavigationBarState extends md.State<GroupOnBottomNavigationBa
           mainAxisSize: md.MainAxisSize.max,
           children: widget.items.map((b) {
             final int i = widget.items.indexOf(b);
+
             final bool selected = i == currentIndex;
 
             return BMNavItem(
@@ -76,9 +79,9 @@ class GroupOnBottomNavigationBarState extends md.State<GroupOnBottomNavigationBa
   }
 
   parseLabel(String label, LabelStyle style, bool selected) {
-    if (!style.isVisible()) {
+    /*if (!style.isVisible()) {
       return null;
-    }
+    }*/
 
     if (style.isShowOnSelect()) {
       return selected ? label : null;
@@ -182,11 +185,11 @@ class IconStyle {
   IconStyle({this.size, this.onSelectSize, this.color, this.onSelectColor});
 
   getSize() {
-    return size ?? 29.0;
+    return size ?? Platform.isIOS? 25.0: 29.0;
   }
 
   getSelectedSize() {
-    return onSelectSize ?? 29.0;
+    return onSelectSize ?? Platform.isIOS? 25.0: 29.0;
   }
 
   getColor() {
@@ -229,9 +232,11 @@ class BMNavItem extends md.StatelessWidget {
               padding: getPadding(),
               child: md.Column(
                   mainAxisSize: md.MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <md.Widget>[
                     md.Icon(icon, size: iconSize, color: color),
-                    label != null ? md.Text(label, style: textStyle) : md.Container()
+                    Platform.isIOS ? md.SizedBox(height: 2.0,):md.Container(),
+              Platform.isIOS ?  label != null? md.Text(label, style: textStyle):md.Container() : md.Container()
                   ]
               )
           ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:group_on_ui/helpers/themes.dart';
 import 'package:group_on_ui/ui/home.dart';
@@ -7,6 +9,7 @@ import 'package:group_on_ui/ui/saved_deals.dart';
 import 'package:group_on_ui/ui/search.dart';
 
 import 'views/bottom_navigation_bar.dart';
+
 
 void main() => runApp(GroupOnApp());
 
@@ -49,29 +52,41 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
   final PageStorageBucket bucket = PageStorageBucket();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-        title: Text(_title, style: TextStyle(color: Colors.white),),
-        elevation: 0.0,
-    ),
-      body: PageStorage(child: currentScreen, bucket: bucket),
-      bottomNavigationBar: GroupOnBottomNavigationBar(
-        index: currentTab,
-        labelStyle: LabelStyle(visible: false),
-        onTap: (i) {
-          setState(() {
-            currentTab = i;
-            currentScreen = screens[i];
-            _title = screenTitle[i];
-          });
-        },
-        items: [
-          BottomNavItem(Icons.home,),
-          BottomNavItem(Icons.search,),
-          BottomNavItem(Icons.notifications,),
-          BottomNavItem(Icons.favorite,),
-          BottomNavItem(Icons.person,)
-        ],
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+          appBar: AppBar(
+          title: Text(_title, style: TextStyle(color: Colors.white),),
+          elevation: 0.0,
+      ),
+        body: PageStorage(child: currentScreen, bucket: bucket),
+        bottomNavigationBar: Material(
+          child: Padding(
+            padding: Platform.isIOS ? EdgeInsets.only(bottom: 20.0): EdgeInsets.only(bottom: 0.0),
+            child: GroupOnBottomNavigationBar(
+              color: Colors.transparent,
+              elevation: 0.0,
+              index: currentTab,
+              labelStyle: LabelStyle(visible: false),
+              onTap: (i) {
+                setState(() {
+                  currentTab = i;
+                  currentScreen = screens[i];
+                  _title = screenTitle[i];
+                });
+              },
+              items: [
+                BottomNavItem(Icons.home,label: 'Featured'),
+                BottomNavItem(Icons.search,label: screenTitle[1]),
+                BottomNavItem(Icons.notifications,label: screenTitle[2]),
+                BottomNavItem(Icons.favorite,label: 'Saved'),
+                BottomNavItem(Icons.person,label: screenTitle[4])
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

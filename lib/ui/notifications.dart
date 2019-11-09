@@ -8,12 +8,11 @@ class NotificationsScreen extends StatefulWidget {
 class NotificationsScreenState extends State<NotificationsScreen> {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: Container(
-        color: Colors.blue,
-        padding: EdgeInsets.all(50.0),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+        color: Colors.purple,
         child: Text('Notifications', style: TextStyle(color: Colors.white, fontSize: 24.0)),
-      ),
     );
   }
 }

@@ -8,12 +8,11 @@ class HomeScreen extends StatefulWidget {
 class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: Container(
-        color: Colors.blue,
-        padding: EdgeInsets.all(50.0),
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.brown,
         child: Text('Home', style: TextStyle(color: Colors.white, fontSize: 24.0)),
-      ),
     );
   }
 }
