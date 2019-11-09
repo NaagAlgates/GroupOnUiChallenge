@@ -42,7 +42,7 @@ Widget appMenu(BuildContext context, TickerProvider provider) {
   return Container(
     width: MediaQuery.of(context).size.width,
     //height: Platform.isIOS ?  MediaQuery.of(context).size.height*0.055: MediaQuery.of(context).size.height*0.075 ,
-    height: MediaQuery.of(context).size.width * 0.13,
+    height: MediaQuery.of(context).size.width * 0.12,
     color: groupOnThemeData.primaryColor,
     child: Stack(
       children: <Widget>[
@@ -56,33 +56,34 @@ Widget appMenu(BuildContext context, TickerProvider provider) {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(2.0),
+                  padding: const EdgeInsets.only(
+                      top: 2.0, bottom: 2.0, right: 4.0, left: 2.0),
                   child: menuList(context, "Beauty & Spa", Icons.star_border),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 2.0, bottom: 2.0, right: 8.0, left: 8.0),
+                      top: 2.0, bottom: 2.0, right: 4.0, left: 2.0),
                   child: menuList(context, "Restaurants", Icons.restaurant),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 2.0, bottom: 2.0, right: 8.0, left: 2.0),
+                      top: 2.0, bottom: 2.0, right: 4.0, left: 2.0),
                   child: menuList(context, "Shopping", Icons.shopping_basket),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 2.0, bottom: 2.0, right: 8.0, left: 2.0),
+                      top: 2.0, bottom: 2.0, right: 4.0, left: 2.0),
                   child: menuList(
                       context, "Things to do", Icons.confirmation_number),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 2.0, bottom: 2.0, right: 8.0, left: 2.0),
+                      top: 2.0, bottom: 2.0, right: 4.0, left: 2.0),
                   child: menuList(context, "Travel", Icons.airplanemode_active),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
+                      top: 2.0, bottom: 2.0, right: 4.0, left: 2.0),
                   child: menuList(
                       context, "Health & Fitness", Icons.fitness_center),
                 ),
@@ -101,7 +102,7 @@ Widget menuList(BuildContext context, String title, IconData icon) {
     child: Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.white,
+          color: Platform.isIOS ? Colors.white38 :Colors.white,
           width: MediaQuery.of(context).size.width * 0.003,
         ),
         color: Colors.transparent,
@@ -114,10 +115,10 @@ Widget menuList(BuildContext context, String title, IconData icon) {
                   Icon(
                     icon,
                     color: Colors.white,
-                    size: MediaQuery.of(context).size.width * 0.045,
+                    size: MediaQuery.of(context).size.width * 0.040,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.011,
+                    width: MediaQuery.of(context).size.width * 0.014,
                   ),
                   Text(
                     title,
