@@ -10,6 +10,7 @@ class GroupOnApp extends StatelessWidget {
     return MaterialApp(
       theme:  groupOnThemeData,
       home: GroupOnHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
