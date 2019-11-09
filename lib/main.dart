@@ -89,8 +89,8 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
               },
               items: [
                 BottomNavItem(Icons.home, label: 'Featured'),
-                BottomNavItem(Icons.search, label: screenTitle[1]),
-                BottomNavItem(Icons.notifications, label: screenTitle[2]),
+                BottomNavItem(Icons.search, label: 'Search'),
+                BottomNavItem(Icons.notifications, label: 'Notifications'),
                 BottomNavItem(Icons.favorite, label: 'Saved'),
                 BottomNavItem(Icons.person, label: screenTitle[4])
               ],

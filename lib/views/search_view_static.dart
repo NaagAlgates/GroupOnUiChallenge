@@ -32,11 +32,11 @@ Widget searchView(BuildContext context) {
                           child: Icon(
                             Icons.search,
                             color: groupOnThemeData.primaryColor,
-                            size: 22.0,
+                            size: MediaQuery.of(context).size.width * 0.055,
                           ),
                         ),
                         SizedBox(
-                          width: 4.0,
+                          width: MediaQuery.of(context).size.width * 0.01,
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width * 0.5,
@@ -55,13 +55,13 @@ Widget searchView(BuildContext context) {
                               autocorrect: false,
                               obscureText: false,
                               style: TextStyle(
-                                  fontSize: 16.0,
+                                  fontSize:  MediaQuery.of(context).size.width * 0.037,
                                   color: groupOnThemeData.primaryColor),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Search Groupon",
                                 hintStyle: TextStyle(
-                                    fontSize: 16.0,
+                                    fontSize:  MediaQuery.of(context).size.width * 0.037,
                                     color: _focusNode.hasFocus
                                         ? Colors.grey[500]
                                         : groupOnThemeData.primaryColor),
@@ -93,15 +93,15 @@ Widget searchView(BuildContext context) {
                         Icon(
                           Icons.location_on,
                           color: Colors.grey[500],
-                          size: 15.0,
+                          size: MediaQuery.of(context).size.width * 0.04,
                         ),
                         SizedBox(
-                          width: 5.0,
+                          width: MediaQuery.of(context).size.width * 0.01,
                         ),
                         Text(
                           "Sydney, NSW",
                           style: TextStyle(
-                              color: Colors.grey[600], fontSize: 13.0),
+                              color: Colors.grey[600], fontSize: MediaQuery.of(context).size.width * 0.03,),
                         ),
                       ],
                     ),
