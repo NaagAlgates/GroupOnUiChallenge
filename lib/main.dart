@@ -9,7 +9,7 @@ import 'package:group_on_ui/ui/saved_deals.dart';
 import 'package:group_on_ui/ui/search.dart';
 
 import 'views/bottom_navigation_bar.dart';
-
+import 'views/search_view_static.dart';
 
 void main() => runApp(GroupOnApp());
 
@@ -18,7 +18,7 @@ class GroupOnApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme:  groupOnThemeData,
+      theme: groupOnThemeData,
       home: GroupOnHomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -27,13 +27,14 @@ class GroupOnApp extends StatelessWidget {
 
 class GroupOnHomePage extends StatefulWidget {
   GroupOnHomePage({Key key}) : super(key: key);
+
   @override
   _GroupOnHomePageState createState() => _GroupOnHomePageState();
 }
 
 class _GroupOnHomePageState extends State<GroupOnHomePage> {
   int currentTab = 0;
-  String _title="Home";
+  String _title = "";
   final List<Widget> screens = [
     HomeScreen(),
     SearchScreen(),
@@ -41,15 +42,16 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
     SavedDealsScreen(),
     AccountScreen()
   ];
-  final List<String> screenTitle =[
-    "Home",
-    "Search",
-    "Notifications",
+  final List<String> screenTitle = [
+    "",
+    "",
+    "",
     "Saved Deals",
     "My Stuff"
   ];
   Widget currentScreen = HomeScreen();
   final PageStorageBucket bucket = PageStorageBucket();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -57,14 +59,22 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
       bottom: false,
       child: Scaffold(
         backgroundColor: Colors.white,
-          appBar: AppBar(
-          title: Text(_title, style: TextStyle(color: Colors.white),),
+        appBar: AppBar(
+          title: Text(
+            _title,
+            style: TextStyle(color: Colors.white),
+          ),
           elevation: 0.0,
-      ),
+          actions: <Widget>[
+            searchView(context)
+          ],
+        ),
         body: PageStorage(child: currentScreen, bucket: bucket),
         bottomNavigationBar: Material(
           child: Padding(
-            padding: Platform.isIOS ? EdgeInsets.only(bottom: 20.0): EdgeInsets.only(bottom: 0.0),
+            padding: Platform.isIOS
+                ? EdgeInsets.only(bottom: 20.0)
+                : EdgeInsets.only(bottom: 0.0),
             child: GroupOnBottomNavigationBar(
               color: Colors.transparent,
               elevation: 0.0,
@@ -78,11 +88,11 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
                 });
               },
               items: [
-                BottomNavItem(Icons.home,label: 'Featured'),
-                BottomNavItem(Icons.search,label: screenTitle[1]),
-                BottomNavItem(Icons.notifications,label: screenTitle[2]),
-                BottomNavItem(Icons.favorite,label: 'Saved'),
-                BottomNavItem(Icons.person,label: screenTitle[4])
+                BottomNavItem(Icons.home, label: 'Featured'),
+                BottomNavItem(Icons.search, label: screenTitle[1]),
+                BottomNavItem(Icons.notifications, label: screenTitle[2]),
+                BottomNavItem(Icons.favorite, label: 'Saved'),
+                BottomNavItem(Icons.person, label: screenTitle[4])
               ],
             ),
           ),
