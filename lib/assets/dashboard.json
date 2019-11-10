@@ -1,0 +1,88 @@
+{
+  "deals": [
+    {
+      "id": 1,
+      "name": "Nag Juice",
+      "imageUrl": "https://homepages.cae.wisc.edu/~ece533/images/monarch.png",
+      "locationCount": 74,
+      "distance": "0.1 km",
+      "ratings": 4.4,
+      "reviews": 780,
+      "range": null,
+      "originalCost": 8,
+      "discountedPrice": 4.95,
+      "discountSpecifications": "Large fruit or veggies juice",
+      "status":"NEW"
+    },
+    {
+      "id": 2,
+      "name": "Mountains Trips",
+      "imageUrl": "https://homepages.cae.wisc.edu/~ece533/images/mountain.png",
+      "locationCount": 794,
+      "distance": "0.1 km",
+      "ratings": 4.1,
+      "reviews": 1780,
+      "range": "From",
+      "originalCost": 8,
+      "discountedPrice": 8,
+      "discountSpecifications": null,
+      "status":"ALMOST GONE"
+    },
+    {
+      "id": 3,
+      "name": "Tulips",
+      "imageUrl": "https://homepages.cae.wisc.edu/~ece533/images/tulips.png",
+      "locationCount": 4,
+      "distance": "0.6 km",
+      "ratings": 3.4,
+      "reviews": 32,
+      "range": null,
+      "originalCost": 8,
+      "discountedPrice": 5.5,
+      "discountSpecifications": "Only on day trips",
+      "status":null
+    },
+    {
+      "id": 4,
+      "name": "Pool Games",
+      "imageUrl": "https://homepages.cae.wisc.edu/~ece533/images/pool.png",
+      "locationCount": 300,
+      "distance": "0.4 km",
+      "ratings": 4.9,
+      "reviews": 1290,
+      "range": null,
+      "originalCost": 364,
+      "discountedPrice": 78,
+      "discountSpecifications": "Applies to all vouchers",
+      "status":"SOLD"
+    },
+    {
+      "id": 5,
+      "name": "Cheap Peppers",
+      "imageUrl": "https://homepages.cae.wisc.edu/~ece533/images/peppers.png",
+      "locationCount": 3,
+      "distance": "0.0 km",
+      "ratings": 2.4,
+      "reviews": 2,
+      "range": "From",
+      "originalCost": 88,
+      "discountedPrice": 88,
+      "discountSpecifications": null,
+      "status":null
+    },
+    {
+      "id": 6,
+      "name": "Airplane Ride",
+      "imageUrl": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
+      "locationCount": 2,
+      "distance": "3.1 km",
+      "ratings": 4.0,
+      "reviews": 3629,
+      "range": null,
+      "originalCost": 408,
+      "discountedPrice": 401,
+      "discountSpecifications": "Only on 150000 ft packages",
+      "status":"FAST SELLING"
+    }
+  ]
+}

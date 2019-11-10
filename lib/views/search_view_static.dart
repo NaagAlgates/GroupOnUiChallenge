@@ -16,7 +16,7 @@ Widget searchView(BuildContext context) {
           width: MediaQuery.of(context).size.width * 0.96,
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(0.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
@@ -29,10 +29,13 @@ Widget searchView(BuildContext context) {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Center(
-                          child: Icon(
-                            Icons.search,
-                            color: groupOnThemeData.primaryColor,
-                            size: MediaQuery.of(context).size.width * 0.055,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 4.0,top: 4.0),
+                            child: Icon(
+                              Icons.search,
+                              color: groupOnThemeData.primaryColor,
+                              size: MediaQuery.of(context).size.width * 0.05,
+                            ),
                           ),
                         ),
                         SizedBox(
