@@ -48,15 +48,15 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       backgroundColor: Colors.grey[200],
       body: Stack(
         children: <Widget>[
-          new CustomScrollView(
+          CustomScrollView(
             controller: scrollController,
             shrinkWrap: true,
             slivers: <Widget>[
-              new SliverPadding(
+              SliverPadding(
                 padding: const EdgeInsets.only(
                     left: 6.0, right: 6.0, bottom: 6.0, top: 70.0),
-                sliver: new SliverList(
-                  delegate: new SliverChildListDelegate(
+                sliver: SliverList(
+                  delegate: SliverChildListDelegate(
                     <Widget>[
                       dealsList(
                           context,
