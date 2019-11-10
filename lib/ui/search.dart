@@ -11,7 +11,7 @@ class SearchScreenState extends State<SearchScreen> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: Colors.red,
+      color: Colors.white,
         child: Text('Search', style: TextStyle(color: Colors.white, fontSize: 24.0)),
     );
   }
