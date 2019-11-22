@@ -381,7 +381,7 @@ Widget dealsList(
                           child: Container(
                               color: groupOnThemeData.primaryColorLight,
                               child: Padding(
-                                padding: const EdgeInsets.all(4.5),
+                                padding: const EdgeInsets.only(top: 3.5,bottom: 3.5, right: 6.0,left: 6.0),
                                 child: Text(
                                   originalPrice != -1
                                       ? "${(offerPrice / originalPrice * 100).toInt()}% OFF"
@@ -389,7 +389,7 @@ Widget dealsList(
                                   style: TextStyle(
                                       fontSize:
                                           _width *
-                                              0.03,
+                                              0.027,
                                       color: groupOnThemeData.primaryColorDark,
                                       fontWeight: FontWeight.bold),
                                 ),
