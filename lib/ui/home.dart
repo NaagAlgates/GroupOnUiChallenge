@@ -59,7 +59,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     left: _height * 0.008,
                     right: _height * 0.008,
                     bottom: _height * 0.008,
-                    top: _height * 0.06),
+                    top: _height * 0.05),
                 sliver: SliverList(
                   delegate: SliverChildListDelegate(
                     <Widget>[
@@ -168,7 +168,7 @@ Widget appMenu(BuildContext context, TickerProvider provider) {
         PositionedTransition(
           rect: relativeRectTween,
           child: Padding(
-            padding: EdgeInsets.only(top: 2.0,bottom: 8.0,right: 8.0,left: 4.0),
+            padding: EdgeInsets.only(top: 2.0,bottom: 8.0,right: 8.0,left: 6.0),
             child: ListView(
               physics: ScrollPhysics(),
               scrollDirection: Axis.horizontal,
