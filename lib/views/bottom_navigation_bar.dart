@@ -185,11 +185,11 @@ class IconStyle {
   IconStyle({this.size, this.onSelectSize, this.color, this.onSelectColor});
 
   getSize() {
-    return size ?? Platform.isIOS? 25.0: 29.0;
+    return size ?? Platform.isIOS? 29.0: 32.0;
   }
 
   getSelectedSize() {
-    return onSelectSize ?? Platform.isIOS? 25.0: 29.0;
+    return onSelectSize ?? Platform.isIOS? 29.0: 32.0;
   }
 
   getColor() {
@@ -248,8 +248,6 @@ class BMNavItem extends md.StatelessWidget {
     );
   }
 
-  // getPadding returns the padding after adjusting the top and bottom
-  // padding based on the fontsize and iconSize.
   getPadding() {
     if (label != null) {
       final double p = ((56-textStyle.fontSize)-iconSize)/2;
