@@ -59,15 +59,18 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
       bottom: false,
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text(
-            _title,
-            style: TextStyle(color: Colors.white),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          child: AppBar(
+            title: Text(
+              _title,
+              style: TextStyle(color: Colors.white),
+            ),
+            elevation: 0.0,
+            actions: <Widget>[
+              searchView(context)
+            ],
           ),
-          elevation: 0.0,
-          actions: <Widget>[
-            searchView(context)
-          ],
         ),
         body: PageStorage(child: currentScreen, bucket: bucket),
         bottomNavigationBar: Material(
