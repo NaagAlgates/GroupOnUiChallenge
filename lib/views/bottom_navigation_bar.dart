@@ -240,8 +240,8 @@ class BMNavItem extends md.StatelessWidget {
                   ]
               )
           ),
-          highlightColor: md.Theme.of(context).highlightColor,
-          splashColor: md.Theme.of(context).splashColor,
+          highlightColor: /*md.Theme.of(context).highlightColor*/ md.Colors.transparent,
+          splashColor: md.Theme.of(context).highlightColor,
           radius: md.Material.defaultSplashRadius,
           onTap: () => onTap(),
         )
