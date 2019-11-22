@@ -59,7 +59,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     left: _height * 0.008,
                     right: _height * 0.008,
                     bottom: _height * 0.008,
-                    top: _height * 0.08),
+                    top: _height * 0.06),
                 sliver: SliverList(
                   delegate: SliverChildListDelegate(
                     <Widget>[
@@ -95,7 +95,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           70,
                           53,
                           'Valid on all flowers',
-                          null),
+                          "TRENDING"),
                       dealsList(
                           context,
                           "https://homepages.cae.wisc.edu/~ece533/images/pool.png",
@@ -128,7 +128,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           788,
                           707,
                           'Valid only on all packages above 15,000 feet',
-                          null),
+                          "TRENDING"),
                     ],
                   ),
                 ),
@@ -137,7 +137,7 @@ class HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           AnimatedContainer(
               duration: Duration(milliseconds: 100),
-              height: isVisible ? _height * 0.058 : 0.0,
+              height: isVisible ? _height * 0.046 : 0.0,
               child: appMenu(context, this)),
         ],
       ),
@@ -162,14 +162,13 @@ Widget appMenu(BuildContext context, TickerProvider provider) {
   return Container(
     width: _width,
     //height: Platform.isIOS ?  MediaQuery.of(context).size.height*0.055: MediaQuery.of(context).size.height*0.075 ,
-    height: _width * 0.11,
     color: groupOnThemeData.primaryColor,
     child: Stack(
       children: <Widget>[
         PositionedTransition(
           rect: relativeRectTween,
           child: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.only(top: 2.0,bottom: 8.0,right: 8.0,left: 4.0),
             child: ListView(
               physics: ScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -240,8 +239,8 @@ Widget dealsList(
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Icon(
-                                    Icons.timelapse,
-                                    color: Colors.white,
+                                    status!=null && status !="TRENDING" ? Icons.timelapse: Icons.trending_up,
+                                    color:  Colors.white,
                                     size: _width *
                                         0.045,
                                   ),
@@ -440,7 +439,7 @@ Widget menuList(BuildContext context, String title, IconData icon) {
         ),
         child: Center(
             child: Padding(
-                padding: const EdgeInsets.all(4.0),
+                padding: const EdgeInsets.only(left: 6.0,right: 6.0,top: 4.0,bottom: 4.0),
                 child: Row(
                   children: <Widget>[
                     Icon(

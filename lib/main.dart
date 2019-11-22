@@ -60,7 +60,7 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.0),
+          preferredSize: Size.fromHeight(55.0),
           child: AppBar(
             title: Text(
               _title,
