@@ -5,6 +5,11 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:group_on_ui/ui/home.dart';
+import 'package:group_on_ui/ui/my_account.dart';
+import 'package:group_on_ui/ui/notifications.dart';
+import 'package:group_on_ui/ui/saved_deals.dart';
+import 'package:group_on_ui/ui/search.dart';
 import 'package:group_on_ui/views/bouncing_menu_list.dart';
 import 'package:group_on_ui/views/delas_list.dart';
 
@@ -21,6 +26,30 @@ class Constants {
         .loadString(assetsPath)
         .then((jsonStr) => jsonDecode(jsonStr));
   }
+
+  static List<Widget> screens = [
+    HomeScreen(),
+    SearchScreen(),
+    NotificationsScreen(),
+    SavedDealsScreen(),
+    AccountScreen()
+  ];
+
+  static List<String> screenTitle = [
+    "",
+    "",
+    "",
+    "Saved Deals",
+    "My Stuff"
+  ];
+
+  static List<String> bottomMenuName = [
+    "Featured",
+    "Search",
+    "Notifications",
+    "Saved",
+    "My Stuff"
+  ];
 
   static List<Widget> bouncingMenuList = [
     BouncingMenuList("Beauty & Spa", Icons.star_border),
