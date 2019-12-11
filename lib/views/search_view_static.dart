@@ -14,7 +14,7 @@ Widget searchView(BuildContext context) {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(3.0),
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.96,
+          width: MediaQuery.of(context).size.width * 0.95,
           color: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

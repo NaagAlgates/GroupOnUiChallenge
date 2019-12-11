@@ -76,11 +76,11 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
                 });
               },
               items: [
-                BottomNavItem(Icons.home,label: Constants.bottomMenuName[currentTab]),
-                BottomNavItem(Icons.search, label: Constants.bottomMenuName[currentTab]),
-                BottomNavItem(Icons.notifications, label: Constants.bottomMenuName[currentTab]),
-                BottomNavItem(Icons.favorite, label: Constants.bottomMenuName[currentTab]),
-                BottomNavItem(Icons.person, label: Constants.bottomMenuName[currentTab])
+                BottomNavItem(Icons.home,label: Constants.bottomMenuName[0]),
+                BottomNavItem(Icons.search, label: Constants.bottomMenuName[1]),
+                BottomNavItem(Icons.notifications, label: Constants.bottomMenuName[2]),
+                BottomNavItem(Icons.favorite, label: Constants.bottomMenuName[3]),
+                BottomNavItem(Icons.person, label: Constants.bottomMenuName[4])
               ],
             ),
           ),
