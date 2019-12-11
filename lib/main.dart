@@ -32,13 +32,14 @@ class GroupOnHomePage extends StatefulWidget {
 class _GroupOnHomePageState extends State<GroupOnHomePage> {
   int currentTab = 0;
   String _title = "";
-
+  var showSearch = true;
 
   Widget currentScreen = HomeScreen();
   final PageStorageBucket bucket = PageStorageBucket();
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       top: false,
       bottom: false,
@@ -53,7 +54,7 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
             ),
             elevation: 0.0,
             actions: <Widget>[
-              searchView(context)
+              showSearch?searchView(context):Container()
             ],
           ),
         ),
@@ -73,6 +74,7 @@ class _GroupOnHomePageState extends State<GroupOnHomePage> {
                   currentTab = i;
                   currentScreen = Constants.screens[i];
                   _title = Constants.screenTitle[i];
+                  showSearch=  i>2?false:true;
                 });
               },
               items: [
